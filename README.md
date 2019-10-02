@@ -1,4 +1,4 @@
-# MIPS Pipelining Implementation
+# MIPS-Pipelining-Implementation
 ---
 This project, as the name suggests is an implementation of the MIPS pipelined processor.
 
