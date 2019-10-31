@@ -1,0 +1,368 @@
+
+%%%%%%%%%%%%  v2.0.0-beta  %%%%%%%%%%%%%%
+
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{latexsym}
+\usepackage{amsfonts}
+\usepackage[normalem]{ulem}
+\usepackage{array}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[backend=biber,
+style=numeric,
+sorting=none,
+isbn=false,
+doi=false,
+url=false,
+]{biblatex}\addbibresource{bibliography.bib}
+
+\usepackage{subfig}
+\usepackage{wrapfig}
+\usepackage{wasysym}
+\usepackage{enumitem}
+\usepackage{adjustbox}
+\usepackage{ragged2e}
+\usepackage[svgnames,table]{xcolor}
+\usepackage{tikz}
+\usepackage{longtable}
+\usepackage{changepage}
+\usepackage{setspace}
+\usepackage{hhline}
+\usepackage{multicol}
+\usepackage{tabto}
+\usepackage{float}
+\usepackage{multirow}
+\usepackage{makecell}
+\usepackage{fancyhdr}
+\usepackage[toc,page]{appendix}
+\usepackage[hidelinks]{hyperref}
+\usetikzlibrary{shapes.symbols,shapes.geometric,shadows,arrows.meta}
+\tikzset{>={Latex[width=1.5mm,length=2mm]}}
+\usepackage{flowchart}\usepackage[paperheight=11.0in,paperwidth=8.5in,left=1.0in,right=1.0in,top=1.0in,bottom=1.0in,headheight=1in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\TabPositions{0.5in,1.0in,1.5in,2.0in,2.5in,3.0in,3.5in,4.0in,4.5in,5.0in,5.5in,6.0in,}
+
+\urlstyle{same}
+
+
+ %%%%%%%%%%%%  Set Depths for Sections  %%%%%%%%%%%%%%
+
+% 1) Section
+% 1.1) SubSection
+% 1.1.1) SubSubSection
+% 1.1.1.1) Paragraph
+% 1.1.1.1.1) Subparagraph
+
+
+\setcounter{tocdepth}{5}
+\setcounter{secnumdepth}{5}
+
+
+ %%%%%%%%%%%%  Set Depths for Nested Lists created by \begin{enumerate}  %%%%%%%%%%%%%%
+
+
+\setlistdepth{9}
+\renewlist{enumerate}{enumerate}{9}
+		\setlist[enumerate,1]{label=\arabic*)}
+		\setlist[enumerate,2]{label=\alph*)}
+		\setlist[enumerate,3]{label=(\roman*)}
+		\setlist[enumerate,4]{label=(\arabic*)}
+		\setlist[enumerate,5]{label=(\Alph*)}
+		\setlist[enumerate,6]{label=(\Roman*)}
+		\setlist[enumerate,7]{label=\arabic*}
+		\setlist[enumerate,8]{label=\alph*}
+		\setlist[enumerate,9]{label=\roman*}
+
+\renewlist{itemize}{itemize}{9}
+		\setlist[itemize]{label=$\cdot$}
+		\setlist[itemize,1]{label=\textbullet}
+		\setlist[itemize,2]{label=$\circ$}
+		\setlist[itemize,3]{label=$\ast$}
+		\setlist[itemize,4]{label=$\dagger$}
+		\setlist[itemize,5]{label=$\triangleright$}
+		\setlist[itemize,6]{label=$\bigstar$}
+		\setlist[itemize,7]{label=$\blacklozenge$}
+		\setlist[itemize,8]{label=$\prime$}
+
+
+
+ %%%%%%%%%%%%  Header here  %%%%%%%%%%%%%%
+
+
+\pagestyle{fancy}
+\fancyhf{}
+\chead{ 
+\vspace{\baselineskip}
+}
+\renewcommand{\headrulewidth}{0pt}
+\setlength{\topsep}{0pt}\setlength{\parindent}{0pt}
+
+ %%%%%%%%%%%%  This sets linespacing (verticle gap between Lines) Default=1 %%%%%%%%%%%%%%
+
+
+\renewcommand{\arraystretch}{1.3}
+
+
+%%%%%%%%%%%%%%%%%%%% Document code starts here %%%%%%%%%%%%%%%%%%%%
+
+
+
+\begin{document}
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+{\fontsize{22pt}{26.4pt}\selectfont \textbf{MIPS Pipeline Processor}\par}\par
+
+
+\vspace{\baselineskip}
+{\fontsize{18pt}{21.6pt}\selectfont Computer Architecture And Microprocessors(CSN221)\par}\par
+
+{\fontsize{18pt}{21.6pt}\selectfont Indian Institute Of Technology, Roorkee\par}\par
+
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+{\fontsize{18pt}{21.6pt}\selectfont Shourya Shukla\par}\par
+
+{\fontsize{18pt}{21.6pt}\selectfont Arnesh Agrawal\par}\par
+
+{\fontsize{18pt}{21.6pt}\selectfont Mahak Bansal\par}\par
+
+
+\vspace{\baselineskip}
+{\fontsize{18pt}{21.6pt}\selectfont Karma Dolkar\par}\par
+
+{\fontsize{18pt}{21.6pt}\selectfont Jyotsnaa Gupta\par}\par
+
+{\fontsize{18pt}{21.6pt}\selectfont Tanya Kumari\par}\par
+
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+\vspace{\baselineskip}
+\vspace{\baselineskip}
+\vspace{\baselineskip}
+\vspace{\baselineskip}
+\vspace{\baselineskip}\vspace{\baselineskip}\vspace{\baselineskip}\vspace{\baselineskip}\vspace{\baselineskip}\vspace{\baselineskip}\vspace{\baselineskip}\vspace{\baselineskip}\vspace{\baselineskip}\vspace{\baselineskip}\vspace{\baselineskip}\vspace{\baselineskip}\vspace{\baselineskip}
+
+
+\vspace{\baselineskip}
+{\fontsize{22pt}{26.4pt}\selectfont \textbf{Abstract}\par}\par
+\vspace{\baselineskip}
+{\fontsize{18pt}{21.6pt}\selectfont \\
+To\ increase CPU performance, we can either have faster hardware, or have a mechanism whereby many instructions are simultaneously executed. Pipelining is a process of arrangement of hardware elements of the CPU to increase its overall performance. It is an implementation technique that allows overlapping of multiple instructions  during execution.Today, pipelining is the primary implementation technique used to make fast CPUs. Simultaneous execution of many instructions takes place in a pipelined processor. But, there are a few drawbacks of said process, which include complexity and pipeline stalling due to multiple hazards. \par}\par
+
+
+\vspace{\baselineskip}
+{\fontsize{18pt}{21.6pt}\selectfont MIPS is a RISC ISA that is used for computing. Through this project, we aim to discuss and implement pipelining using the MIPS architecture.\par}\par
+
+
+\vspace{\baselineskip}
+{\fontsize{18pt}{21.6pt}\selectfont We have designed a 32-bit MIPS Pipelined Processor to serve the purpose.\par}\par
+
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+{\fontsize{18pt}{21.6pt}\selectfont A diagram illustrating a 5-stage MIPS Pipeline Processor:\par}\par
+
+
+
+%%%%%%%%%%%%%%%%%%%% Figure/Image No: 1 starts here %%%%%%%%%%%%%%%%%%%%
+
+\begin{figure}[H]
+	\begin{Center}
+		\includegraphics[width=6.5in,height=3.85in]{./media/image4.jpg}
+	\end{Center}
+\end{figure}
+
+
+%%%%%%%%%%%%%%%%%%%% Figure/Image No: 1 Ends here %%%%%%%%%%%%%%%%%%%%
+
+\par
+
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+{\fontsize{22pt}{26.4pt}\selectfont \textbf{Why this topic caught our intrigue}\par}\par
+
+
+\vspace{\baselineskip}
+{\fontsize{18pt}{21.6pt}\selectfont Pipelining is interesting for a vast multitude of reasons. Primarily, pipelining helps execute multiple instructions simultaneously. Therefore the time it takes to execute an instruction is the same, the exciting part is that multiple instructions are executed at the same time.\par}\par
+
+
+\vspace{\baselineskip}
+{\fontsize{18pt}{21.6pt}\selectfont A workshop (on Parallel Computing) conducted by Nvidia in our campus under the aegis of our professor Dr. P Sateesh Kumar also played a major role in motivating us to choose this topic because we felt a bit familiar with the keyword ‘Pipelining’ and hence decided that it would be easier to approach the topic.\par}\par
+
+
+\vspace{\baselineskip}
+{\fontsize{18pt}{21.6pt}\selectfont A fun trivia about MIPS is that the application processing (or host processing) for most consumer devices (like audio/video player) is usually handled by a programmable core such as a MIPS processor. MIPS is an ISA that helps physically realize (i.e. implement) pipelining in this case. Using something as resourceful, intriguing, and as widely used as MIPS is an interesting facet of our project. \par}\par
+
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+{\fontsize{22pt}{26.4pt}\selectfont \textbf{Methods used to evaluate the topic }\par}\par
+
+
+\vspace{\baselineskip}
+{\fontsize{18pt}{21.6pt}\selectfont We have used $``$Xilinx Vivado HLx$"$  to write our code in the Verilog programming language. Also, we have used Git for version control and GitHub as a platform to host our code online. GanttProject has been used to create a project timeline and hence bring a better workflow in the project.\par}\par
+
+
+\vspace{\baselineskip}
+{\fontsize{18pt}{21.6pt}\selectfont We will first work with design and execution of single-cycle MIPS processor and 32-bit 5-stage pipelined MIPS Processor in Verilog and then analyse and compare both.\par}\par
+
+
+\vspace{\baselineskip}
+{\fontsize{18pt}{21.6pt}\selectfont So the implementation of our project consists of \textbf{two parts}:\par}\par
+
+
+\vspace{\baselineskip}
+{\fontsize{18pt}{21.6pt}\selectfont In the \textbf{first part}, we are designing and implementing single-cycle MIPS processor. From the I, the single-cycle datapath with the control unit of the MIPS Processor is obtained.\par}\par
+
+
+\vspace{\baselineskip}
+{\fontsize{18pt}{21.6pt}\selectfont In the \textbf{second part}, pipelined registers are added to the single-cycle datapath and make it become a pipelined MIPS Processor. Special designs such as forwarding, stall control, and flush control unit are needed to solve hazards in the pipelined MIPS Processor.\par}\par
+
+{\fontsize{18pt}{21.6pt}\selectfont The design flow for the 32-bit pipelined MIPS flow:\par}\par
+
+
+\vspace{\baselineskip}
+
+
+%%%%%%%%%%%%%%%%%%%% Figure/Image No: 2 starts here %%%%%%%%%%%%%%%%%%%%
+
+\begin{figure}[H]
+	\begin{Center}
+		\includegraphics[width=6.19in,height=4.02in]{./media/image2.png}
+	\end{Center}
+\end{figure}
+
+
+%%%%%%%%%%%%%%%%%%%% Figure/Image No: 2 Ends here %%%%%%%%%%%%%%%%%%%%
+
+\par
+
+{\fontsize{22pt}{26.4pt}\selectfont \textbf{GanttChart}\par}\par
+
+
+\vspace{\baselineskip}
+
+
+%%%%%%%%%%%%%%%%%%%% Figure/Image No: 3 starts here %%%%%%%%%%%%%%%%%%%%
+
+\begin{figure}[H]
+	\begin{Center}
+		\includegraphics[width=6.5in,height=3.23in]{./media/image1.jpg}
+	\end{Center}
+\end{figure}
+
+
+%%%%%%%%%%%%%%%%%%%% Figure/Image No: 3 Ends here %%%%%%%%%%%%%%%%%%%%
+
+\par
+
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+{\fontsize{22pt}{26.4pt}\selectfont \textbf{Result}\par}\par
+
+
+\vspace{\baselineskip}
+{\fontsize{18pt}{21.6pt}\selectfont This design consists of five pipeline stages which are: \textbf{Fetch stage, Decode stage, Execute stage, Memory stage and Write back stage}.\par}\par
+
+{\fontsize{18pt}{21.6pt}\selectfont The first problem with the single-cycle MIPS is wasteful of the area which only each functional unit is used once per clock cycle. Another serious drawback is that the clock cycle is determined by the longest possible path in the Processor. Thus, the pipelined MIPS came out to solve those problems by exploiting most functional unit in one clock cycle and improving the performance by increasing instruction throughput. However, the pipelined MIPS also faces challenges such as control and data hazards.\par}\par
+
+
+\vspace{\baselineskip}
+{\fontsize{18pt}{21.6pt}\selectfont Here is a comparison between a Single-cycle MIPS and a Pipelined MIPS:\par}\par
+
+
+
+%%%%%%%%%%%%%%%%%%%% Figure/Image No: 4 starts here %%%%%%%%%%%%%%%%%%%%
+
+\begin{figure}[H]
+	\begin{Center}
+		\includegraphics[width=6.5in,height=2.43in]{./media/image3.png}
+	\end{Center}
+\end{figure}
+
+
+%%%%%%%%%%%%%%%%%%%% Figure/Image No: 4 Ends here %%%%%%%%%%%%%%%%%%%%
+
+\\
+\par
+
+{\fontsize{18pt}{21.6pt}\selectfont Hence, we observe that even in practice, the Pipelined MIPS processor clearly outperforms the Single-cycle MIPS processor. \par}\par
+
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+{\fontsize{22pt}{26.4pt}\selectfont \textbf{References}\par}\par
+
+
+\vspace{\baselineskip}
+{\fontsize{18pt}{21.6pt}\selectfont Links of related research papers :\par}\par
+
+
+\vspace{\baselineskip}
+\begin{enumerate}
+	\item \href{https://ieeexplore.ieee.org/abstract/document/6578243}{\textcolor[HTML]{0563C1}{\uline{https://ieeexplore.ieee.org/abstract/document/6578243}}}\par
+	
+	\item \href{https://link.springer.com/article/10.1007/BF029433}{\textcolor[HTML]{0563C1}{\uline{https://link.springer.com/article/10.1007/BF029433}}}\par
+
+
+	\item \href{https://ieeexplore.ieee.org/abstract/document/5403912/}{\textcolor[HTML]{0563C1}{\uline{https://ieeexplore.ieee.org/abstract/document/5403912/}}}\par	
+	
+	\item \href{https://www.researchgate.net/profile/Norman_Jouppi/publication/234795328_MIPS_A_microprocessor_architecture/links/00b495185e2fb79958000000/MIPS-A-microprocessor-architecture.pdf}{\textcolor[HTML]{0563C1}{\uline{https://www.researchgate.net/profile/Norman\_Jouppi/publication/234795328\_MIPS\_A\_microprocessor\_architecture/links/00b495185e2fb79958000000/MIPS-A-microprocessor-architecture.pdf}}}\par	
+
+	
+\end{enumerate}\par
+
+
+\vspace{\baselineskip}
+
+\printbibliography
+\end{document}
