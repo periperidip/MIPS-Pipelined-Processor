@@ -508,5 +508,60 @@ bool gocycling()
     else//continue
         return true;
 }
+void nonPipelined(){
+
+    wbrd=memrt;
+    // writeback(memsignal,memrt,memalu,memreaddata);
+    // memoryaccess();
+    // execution();
+    // instructiondecode();
+    instructionfetch2();
+    clockcycle++;
+    wbrd=memrt;
+
+    // print();
+}
+void print()
+{
+    fout<<"CC "<<clockcycle<<":"<<endl;
+    fout<<endl;
+    fout<<"Registers:"<<endl;
+    for(int k=0; k<10; k++)
+        fout<<"$"<<k<<": "<<    reg[k]<<endl;
+    fout<<endl;
+    fout<<"Data memory:"<<endl;
+    fout<<"0x00: "<<mem[0]<<endl;
+    fout<<"0x04: "<<mem[1]<<endl;
+    fout<<"0x08: "<<mem[2]<<endl;
+    fout<<"0x0C: "<<mem[3]<<endl;
+    fout<<"0x10: "<<mem[4]<<endl;
+    fout<<endl;
+    fout<<"IF/ID :"<<endl;
+    fout<<"PC              "<<pc<<endl;
+    fout<<"Instruction     "<<finstruction<<endl;
+    fout<<endl;
+    fout<<"ID/EX :"<<endl;
+    fout<<"ReadData1       "<<readdata1<<endl;
+    fout<<"ReadData2       "<<readdata2<<endl;
+    fout<<"sign_ext        "<<signextend<<endl;
+    fout<<"Rs              "<<rs<<endl;
+    fout<<"Rt              "<<rt<<endl;
+    fout<<"Rd              "<<rd<<endl;
+    fout<<"Control signals "<<idexsignal<<endl;
+    fout<<endl;
+    fout<<"EX/MEM :"<<endl;
+    fout<<"ALUout          "<<aluout<<endl;
+    fout<<"WriteData       "<<writedata<<endl;
+    fout<<"Rt/Rd           ";
+    fout<<exert<<endl;
+    fout<<"Control signals "<<exesignal<<endl;
+    fout<<endl;
+    fout<<"MEM/WB :"<<endl;
+    fout<<"ReadData        "<<memreaddata<<endl;
+    fout<<"ALUout          "<<memalu<<endl;
+    fout<<"Rt/Rd           "<<wbrd<<endl;
+    fout<<"Control signals "<<memsignal<<endl;
+    fout<<"================================================================="<<endl;
+}
 
 
