@@ -521,6 +521,61 @@ void nonPipelined(){
 
     // print();
 }
+
+int main()
+{   
+    int n;
+    //initialize the memory and registers
+    mem[0]=5;
+    mem[1]=9;
+    mem[2]=4;
+    mem[3]=8;
+    mem[4]=7;
+
+    reg[0]=0;
+    reg[1]=9;
+    reg[2]=8;
+    reg[3]=7;
+    reg[4]=1;
+    reg[5]=2;
+    reg[6]=3;
+    reg[7]=4;
+    reg[8]=5;
+    reg[9]=6;
+
+    //file open
+    ifstream fin("Input.txt");
+    int i=1;// start with 1 for convient
+    //read the input instructions
+    while (fin >> instructions[i])
+        i++;
+    cout<< "Select option" << endl;
+    cout<< "1 for Non-Pipelined Processor" << endl;
+    cout<< "2 for Pipelined Processor" << endl;
+    cin>> n ;    
+    if (n==1) {
+    //start the clock
+    auto start = high_resolution_clock::now();
+    //run by function gocycling
+    while(gocycling()==true);
+    auto stop = high_resolution_clock::now();
+    auto duration = duration_cast<microseconds>(stop - start); 
+    cout << duration.count() << " Microseconds for Non-Pipelined Processor" << endl; 
+    }
+    else {
+    //start the clock
+    auto start = high_resolution_clock::now();
+    nonPipelined();
+    auto stop = high_resolution_clock::now();
+    auto duration = duration_cast<microseconds>(stop - start); 
+    cout << duration.count() << " Microseconds for Pipelined Processor" << endl; 
+    }
+    fin.close();
+    fout.close();
+    
+    return 0;
+}
+
 void print()
 {
     fout<<"CC "<<clockcycle<<":"<<endl;
