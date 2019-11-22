@@ -291,6 +291,41 @@ void instructionfetch()
         finstruction=instructions[(pc/4)];//fetch the instruction
     }
 }
+void detect()
+
+{
+
+    if(exert==rs && exert != 0 && exesignal[3] == '1')                   //forwarding for data hazard A 10
+
+        readdata1 = aluout;
+
+    if(exert == rt && exert != 0 && exesignal[3] == '1')                    //forward B 10
+
+        readdata2 = aluout;
+
+    if(memrt == rs && memrt != 0 && memsignal[0] == '1')
+
+        readdata1 = (memsignal[1] == '1') ? memreaddata : memalu;          //ForwardA01
+
+    if(memrt== rt && memrt != 0 && memsignal[0] == '1')
+
+        readdata2 = (memsignal[1] == '1') ? memreaddata : memalu;    //ForwardB01
+
+    if (idexsignal[5] == '1'&& (rt == b_d(finstruction.substr(6, 5),false)||rt==b_d(finstruction.substr(11, 5),false)))//lw hazard
+
+    {
+
+        // set NOP
+
+        lwhz=true;
+
+        pc -= 4;
+
+        ifid_input = true;
+
+    }
+
+}
 void writeback2(string wbsignal, int rt , int alu, int readata)
 {
     if (rt ==0)//$0 cant overwrite
