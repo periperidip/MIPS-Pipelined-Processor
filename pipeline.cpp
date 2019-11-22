@@ -58,6 +58,51 @@ string memsignal="00";
 /// for wb
 int wbrd=0;
 
+int b_d(string str, bool sign)//binary to decimal
+{
+    bool f = false;
+    int ans = 0;
+    for (int i = 0; i < str.length(); i++)
+    {
+        ans = ans*2 + str[i] - '0';
+        if (i == 0 && str[i] == '1')
+            f = true;
+    }
+    if (f&&sign)//if it is a signinteger
+    {
+        ans = -(ans);
+    }
+    return ans;
+}
+void print();
+
+void flush()
+{
+    //run the bne hazard happen clock cycle with this function
+    ifid_input = true;
+    pc = exepc+4;
+    if(instructions[(pc/4)]=="")// pc/4= the number of instruction
+    {
+        finstruction="00000000000000000000000000000000";//no instruction
+        ifid_input=false;
+    }
+    else
+    {
+        finstruction=instructions[(pc/4)];//fetch the instruction
+    }
+
+    //id_exe
+    idex_input = true;
+    readdata1 =0 ;
+    readdata2 = 0;
+    signextend = 0;
+    rs = 0;
+    rt = 0;
+    rd = 0;
+    idpc = 0;
+    idexsignal = "000000000";
+    print();
+}
 
 void writeback(string wbsignal, int rt , int alu, int readata)
 {
