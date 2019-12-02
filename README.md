@@ -5,7 +5,7 @@ This project, as the name suggests is an implementation of the MIPS pipelined pr
 The contributors to this project are:
 1. Shourya Shukla
 2. Arnesh Agrawal
-3. Mahak Bansal
+3. Mahak
 4. Karma Dolkar
 5. Jyotsnaa Gupta
 6. Tanya Kumari
